@@ -9,13 +9,22 @@
 /* Begin PBXBuildFile section */
 		2E52047526E6419300F283DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047426E6419300F283DE /* AppDelegate.swift */; };
 		2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047626E6419300F283DE /* SceneDelegate.swift */; };
-		2E52047926E6419300F283DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047826E6419300F283DE /* ViewController.swift */; };
+		2E52047926E6419300F283DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047826E6419300F283DE /* HomeViewController.swift */; };
 		2E52047C26E6419300F283DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52047A26E6419300F283DE /* Main.storyboard */; };
 		2E52047E26E6419400F283DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52047D26E6419400F283DE /* Assets.xcassets */; };
 		2E52048126E6419400F283DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52047F26E6419400F283DE /* LaunchScreen.storyboard */; };
 		2E52048C26E7442700F283DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52048B26E7442700F283DE /* RegisterViewController.swift */; };
 		2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52048D26E7452600F283DE /* LoginViewController.swift */; };
 		2E52049026E7652C00F283DE /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E52048F26E7652C00F283DE /* iOSDropDown.framework */; };
+		2E52049426E8A59900F283DE /* AdminStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */; };
+		2E52049626E8BCD900F283DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049526E8BCD900F283DE /* FeedViewController.swift */; };
+		2E52049826E8C1C500F283DE /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049726E8C1C400F283DE /* FavouritesViewController.swift */; };
+		2E52049A26E8E51900F283DE /* MyAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049926E8E51900F283DE /* MyAdsViewController.swift */; };
+		2E52049C26E8E5C900F283DE /* PostAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049B26E8E5C900F283DE /* PostAdViewController.swift */; };
+		2E52049E26E8E5F700F283DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049D26E8E5F700F283DE /* ProfileViewController.swift */; };
+		2E5204A026E9E5FA00F283DE /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049F26E9E5FA00F283DE /* AddNewsViewController.swift */; };
+		2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */; };
+		2E52050426EB686900F283DE /* Listing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E52050226EB686900F283DE /* Listing.xcdatamodeld */; };
 		D6A7E9E0CA57FB6826FC39B0 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C847DE85407C43B37A377C7 /* Pods_Listing.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +34,7 @@
 		2E52047126E6419300F283DE /* Listing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52047426E6419300F283DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E52047626E6419300F283DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E52047826E6419300F283DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E52047826E6419300F283DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2E52047B26E6419300F283DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E52047D26E6419400F283DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E52048026E6419400F283DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +42,15 @@
 		2E52048B26E7442700F283DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2E52048D26E7452600F283DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E52048F26E7652C00F283DE /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryboard.storyboard; sourceTree = "<group>"; };
+		2E52049526E8BCD900F283DE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2E52049726E8C1C400F283DE /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		2E52049926E8E51900F283DE /* MyAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
+		2E52049B26E8E5C900F283DE /* PostAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAdViewController.swift; sourceTree = "<group>"; };
+		2E52049D26E8E5F700F283DE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2E52049F26E9E5FA00F283DE /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
+		2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		2E52050326EB686900F283DE /* Listing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Listing.xcdatamodel; sourceTree = "<group>"; };
 		EF146C4F304FF2339E7CF6E7 /* Pods-Listing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing.debug.xcconfig"; path = "Target Support Files/Pods-Listing/Pods-Listing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +96,7 @@
 				2E52047D26E6419400F283DE /* Assets.xcassets */,
 				2E52047F26E6419400F283DE /* LaunchScreen.storyboard */,
 				2E52048226E6419400F283DE /* Info.plist */,
+				2E52050226EB686900F283DE /* Listing.xcdatamodeld */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -85,9 +104,16 @@
 		2E52048826E743E500F283DE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2E52047826E6419300F283DE /* ViewController.swift */,
+				2E52047826E6419300F283DE /* HomeViewController.swift */,
 				2E52048B26E7442700F283DE /* RegisterViewController.swift */,
 				2E52048D26E7452600F283DE /* LoginViewController.swift */,
+				2E52049526E8BCD900F283DE /* FeedViewController.swift */,
+				2E52049726E8C1C400F283DE /* FavouritesViewController.swift */,
+				2E52049926E8E51900F283DE /* MyAdsViewController.swift */,
+				2E52049B26E8E5C900F283DE /* PostAdViewController.swift */,
+				2E52049D26E8E5F700F283DE /* ProfileViewController.swift */,
+				2E52049F26E9E5FA00F283DE /* AddNewsViewController.swift */,
+				2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				2E52047A26E6419300F283DE /* Main.storyboard */,
+				2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +214,7 @@
 				2E52048126E6419400F283DE /* LaunchScreen.storyboard in Resources */,
 				2E52047E26E6419400F283DE /* Assets.xcassets in Resources */,
 				2E52047C26E6419300F283DE /* Main.storyboard in Resources */,
+				2E52049426E8A59900F283DE /* AdminStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,11 +267,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E52047926E6419300F283DE /* ViewController.swift in Sources */,
+				2E52049826E8C1C500F283DE /* FavouritesViewController.swift in Sources */,
+				2E52050426EB686900F283DE /* Listing.xcdatamodeld in Sources */,
+				2E52049A26E8E51900F283DE /* MyAdsViewController.swift in Sources */,
+				2E52049E26E8E5F700F283DE /* ProfileViewController.swift in Sources */,
+				2E52047926E6419300F283DE /* HomeViewController.swift in Sources */,
 				2E52047526E6419300F283DE /* AppDelegate.swift in Sources */,
+				2E52049C26E8E5C900F283DE /* PostAdViewController.swift in Sources */,
+				2E5204A026E9E5FA00F283DE /* AddNewsViewController.swift in Sources */,
 				2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */,
+				2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */,
 				2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */,
 				2E52048C26E7442700F283DE /* RegisterViewController.swift in Sources */,
+				2E52049626E8BCD900F283DE /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,13 +429,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Listing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pakeeza.Listing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -412,13 +449,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Listing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pakeeza.Listing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -445,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E52050226EB686900F283DE /* Listing.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E52050326EB686900F283DE /* Listing.xcdatamodel */,
+			);
+			currentVersion = 2E52050326EB686900F283DE /* Listing.xcdatamodel */;
+			path = Listing.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E52046926E6419300F283DE /* Project object */;
 }
