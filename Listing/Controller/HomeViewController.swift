@@ -11,6 +11,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var postsTable: UITableView!
     
+    let favouriteCheckbox = FavouriteCheckbox(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +30,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostsCell", for: indexPath)
         
+        let favouriteCheckbox = FavouriteCheckbox(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapFavourite))
+        
+        favouriteCheckbox.addGestureRecognizer(gesture)
+        
         return cell
+    }
+    
+    @objc func didTapFavourite() {
+        favouriteCheckbox.tapped(true)
     }
     
 }

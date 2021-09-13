@@ -6,7 +6,8 @@ target 'Listing' do
   use_frameworks!
 
   # Pods for Listing
-  
-  pod 'iOSDropDown'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end

@@ -6,24 +6,59 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
+    }
 
     @IBAction func registerNowPressed(_ sender: UIButton) {
         
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
-//
-//        let registerVC = RegisterViewController()
-//        navigationController?.pushViewController(registerVC, animated: true)
     }
     @IBAction func loginContinuePressed(_ sender: UIButton) {
-//        let homeVC = ViewController()
-//        navigationController?.pushViewController(homeVC, animated: true)
+
+        if email.text?.isEmpty == true {
+            print("email empty")
+            return
+        }
+        
+        if password.text?.isEmpty == true {
+            print("password empty")
+            return
+        }
+        
+        login()
+    }
+    
+    func login() {
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { [weak self] authResult, error in
+            
+            guard self != nil else {return}
+            if error != nil {
+                print(error!)
+            }
+            self!.checkUserInfo()
+        }
+    }
+    
+    func checkUserInfo() {
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(identifier: "Home")
+            homeVC.modalPresentationStyle = .overFullScreen
+            self.present(homeVC, animated: true, completion: nil)
+        }
     }
 }

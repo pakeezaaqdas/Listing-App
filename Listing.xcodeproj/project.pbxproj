@@ -15,7 +15,6 @@
 		2E52048126E6419400F283DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52047F26E6419400F283DE /* LaunchScreen.storyboard */; };
 		2E52048C26E7442700F283DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52048B26E7442700F283DE /* RegisterViewController.swift */; };
 		2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52048D26E7452600F283DE /* LoginViewController.swift */; };
-		2E52049026E7652C00F283DE /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E52048F26E7652C00F283DE /* iOSDropDown.framework */; };
 		2E52049426E8A59900F283DE /* AdminStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */; };
 		2E52049626E8BCD900F283DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049526E8BCD900F283DE /* FeedViewController.swift */; };
 		2E52049826E8C1C500F283DE /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049726E8C1C400F283DE /* FavouritesViewController.swift */; };
@@ -25,12 +24,12 @@
 		2E5204A026E9E5FA00F283DE /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049F26E9E5FA00F283DE /* AddNewsViewController.swift */; };
 		2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */; };
 		2E52050426EB686900F283DE /* Listing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E52050226EB686900F283DE /* Listing.xcdatamodeld */; };
-		D6A7E9E0CA57FB6826FC39B0 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C847DE85407C43B37A377C7 /* Pods_Listing.framework */; };
+		2E52050E26EE3FA500F283DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */; };
+		2E52051026EF171B00F283DE /* FavouriteCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */; };
+		3DB2AA350DA31840D6E77BB9 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1123CEAAD5B5C07EFF6971CC /* Pods-Listing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing.release.xcconfig"; path = "Target Support Files/Pods-Listing/Pods-Listing.release.xcconfig"; sourceTree = "<group>"; };
-		1C847DE85407C43B37A377C7 /* Pods_Listing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Listing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52047126E6419300F283DE /* Listing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52047426E6419300F283DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E52047626E6419300F283DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +40,6 @@
 		2E52048226E6419400F283DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52048B26E7442700F283DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2E52048D26E7452600F283DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2E52048F26E7652C00F283DE /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryboard.storyboard; sourceTree = "<group>"; };
 		2E52049526E8BCD900F283DE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		2E52049726E8C1C400F283DE /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +49,11 @@
 		2E52049F26E9E5FA00F283DE /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2E52050326EB686900F283DE /* Listing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Listing.xcdatamodel; sourceTree = "<group>"; };
-		EF146C4F304FF2339E7CF6E7 /* Pods-Listing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing.debug.xcconfig"; path = "Target Support Files/Pods-Listing/Pods-Listing.debug.xcconfig"; sourceTree = "<group>"; };
+		2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCheckbox.swift; sourceTree = "<group>"; };
+		5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Listing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF46A67E721A9238ED6C677 /* Pods-Listing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing.debug.xcconfig"; path = "Target Support Files/Pods-Listing/Pods-Listing.debug.xcconfig"; sourceTree = "<group>"; };
+		B88C8957A7085F66E8B7F846 /* Pods-Listing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing.release.xcconfig"; path = "Target Support Files/Pods-Listing/Pods-Listing.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E52049026E7652C00F283DE /* iOSDropDown.framework in Frameworks */,
-				D6A7E9E0CA57FB6826FC39B0 /* Pods_Listing.framework in Frameworks */,
+				3DB2AA350DA31840D6E77BB9 /* Pods_Listing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +89,7 @@
 		2E52047326E6419300F283DE /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */,
 				2E52048A26E743F500F283DE /* Model */,
 				2E52048926E743EF00F283DE /* View */,
 				2E52048826E743E500F283DE /* Controller */,
@@ -123,6 +125,7 @@
 			children = (
 				2E52047A26E6419300F283DE /* Main.storyboard */,
 				2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */,
+				2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,8 +140,8 @@
 		381705464D9C7E4BB0FD520B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EF146C4F304FF2339E7CF6E7 /* Pods-Listing.debug.xcconfig */,
-				1123CEAAD5B5C07EFF6971CC /* Pods-Listing.release.xcconfig */,
+				9FF46A67E721A9238ED6C677 /* Pods-Listing.debug.xcconfig */,
+				B88C8957A7085F66E8B7F846 /* Pods-Listing.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,8 +149,7 @@
 		EB6B517E9412F95D9F425204 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E52048F26E7652C00F283DE /* iOSDropDown.framework */,
-				1C847DE85407C43B37A377C7 /* Pods_Listing.framework */,
+				5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,11 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E52048526E6419400F283DE /* Build configuration list for PBXNativeTarget "Listing" */;
 			buildPhases = (
-				F4040285730C83CD8C9663F5 /* [CP] Check Pods Manifest.lock */,
+				5F058706D9C7DD6D829D13FE /* [CP] Check Pods Manifest.lock */,
 				2E52046D26E6419300F283DE /* Sources */,
 				2E52046E26E6419300F283DE /* Frameworks */,
 				2E52046F26E6419300F283DE /* Resources */,
-				88BA5CF0B794DB22E175D9DE /* [CP] Embed Pods Frameworks */,
+				1B38E41DE6420D4BFE7340A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +215,7 @@
 			files = (
 				2E52048126E6419400F283DE /* LaunchScreen.storyboard in Resources */,
 				2E52047E26E6419400F283DE /* Assets.xcassets in Resources */,
+				2E52050E26EE3FA500F283DE /* GoogleService-Info.plist in Resources */,
 				2E52047C26E6419300F283DE /* Main.storyboard in Resources */,
 				2E52049426E8A59900F283DE /* AdminStoryboard.storyboard in Resources */,
 			);
@@ -221,7 +224,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88BA5CF0B794DB22E175D9DE /* [CP] Embed Pods Frameworks */ = {
+		1B38E41DE6420D4BFE7340A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,7 +241,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Listing/Pods-Listing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4040285730C83CD8C9663F5 /* [CP] Check Pods Manifest.lock */ = {
+		5F058706D9C7DD6D829D13FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,6 +278,7 @@
 				2E52047526E6419300F283DE /* AppDelegate.swift in Sources */,
 				2E52049C26E8E5C900F283DE /* PostAdViewController.swift in Sources */,
 				2E5204A026E9E5FA00F283DE /* AddNewsViewController.swift in Sources */,
+				2E52051026EF171B00F283DE /* FavouriteCheckbox.swift in Sources */,
 				2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */,
 				2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */,
 				2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */,
@@ -423,7 +427,7 @@
 		};
 		2E52048626E6419400F283DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF146C4F304FF2339E7CF6E7 /* Pods-Listing.debug.xcconfig */;
+			baseConfigurationReference = 9FF46A67E721A9238ED6C677 /* Pods-Listing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,14 +440,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pakeeza.Listing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		2E52048726E6419400F283DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1123CEAAD5B5C07EFF6971CC /* Pods-Listing.release.xcconfig */;
+			baseConfigurationReference = B88C8957A7085F66E8B7F846 /* Pods-Listing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pakeeza.Listing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

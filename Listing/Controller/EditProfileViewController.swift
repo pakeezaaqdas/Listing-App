@@ -6,26 +6,53 @@
 //
 
 import UIKit
+import Firebase
 
 class EditProfileViewController: UIViewController {
+    
+    private let database = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var numberTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
+    }
+    
+    func checkUserInfo() {
+        
+        if Auth.auth().currentUser != nil {
+            print(uid!)
+            getUserInfo(with: uid!)
+            
+        }
+    }
+    
+    func getUserInfo(with uid: String) {
+        
+        database.child("users").child(uid).observe(.value) { snapshot in
+            if let dictionary = snapshot.value as? [String: Any] {
+                let name = dictionary["name"] as! String
+                let number = dictionary["phoneNumber"] as! String
+                
+                self.nameTextField.text = name
+                self.numberTextField.text = number
+            }
+        }
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
+        
+        let userUpdatedData = ["name": nameTextField.text,
+                               "phoneNumber": numberTextField.text]
+        
+        database.child("users").child(uid!).setValue(userUpdatedData)
+        print("Updated")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
