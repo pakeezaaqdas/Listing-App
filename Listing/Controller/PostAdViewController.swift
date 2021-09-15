@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     private let database = Database.database().reference()
     
@@ -25,7 +25,7 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     let categories = ["Mobile", "Laptop", "Accesories"]
     let cities = ["Islamabad", "Lahore", "Peshawar", "Karachi"]
     var adNum = 0
-    
+        
     var categoriesPickerView = UIPickerView()
     var citiesPickerView = UIPickerView()
 
@@ -41,6 +41,8 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         categoriesLabel.inputView = categoriesPickerView
         cityLabel.inputView = citiesPickerView
+        
+        adTitleLabel.delegate = self
     }
     
     //MARK: - Image functions
@@ -127,7 +129,6 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         adNum += 1
-        
         checkUserInfo()
     }
     
@@ -136,7 +137,7 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
             let uid = Auth.auth().currentUser?.uid
             print(uid!)
             postAd(for: uid!)
-           
+            
         } else {
             print("Please login")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -146,18 +147,25 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if  textField == adTitleLabel
+        {
+            checkUserInfo()
+        }
+    }
+    
     func postAd(for uid: String) {
         
-        let adData = ["adNum" : adNum,
+        let adData = ["UID": uid,
                       "category": self.categoriesLabel.text!,
                       "adTitle": self.adTitleLabel.text!,
                       "adDescription": self.descriptionLabel.text!,
                       "city": self.cityLabel.text!,
-                      "price": self.priceLabel.text!] as [String : Any]
+                      "price": self.priceLabel.text!,
+                      "isFavourite": "false"] as [String : Any]
         
-        database.child("Ads").child(uid).child(String(adNum)).setValue(adData)
+        database.child("Ads").childByAutoId().setValue(adData)
     }
-    
 }
 
 

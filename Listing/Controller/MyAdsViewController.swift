@@ -37,7 +37,7 @@ class MyAdsViewController: UITableViewController {
                 if let dictionary = snapshot.value as? [String: Any] {
                     let title = dictionary["adTitle"] as! String
                     let price = dictionary["price"] as! String
-
+                    
                     let titleLabel:UILabel = cell.viewWithTag(1) as! UILabel
                     titleLabel.text = title
 

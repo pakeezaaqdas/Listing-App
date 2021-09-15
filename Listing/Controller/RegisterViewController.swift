@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 import Firebase
 import FirebaseAuth
 
@@ -17,71 +16,25 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var reenterPassword: UITextField!
+    @IBOutlet weak var registerContinueButton: UIButton!
     
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-  //  var items:[Users]?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchUsers()
-
-    }
-    
-//    func fetchUsers() {
-//
-//        do {
-//            //           self.items = try context.fetch(Users.fetchRequest())
-// //           print(items!)
-//        } catch {
-//            print(error)
-//        }
-//    }
-    
-    @IBAction func loginPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func registerContinuePressed(_ sender: UIButton) {
-        
-        if emailAddress.text?.isEmpty == true {
-            print("Email empty")
+       
+        if emailAddress.text?.isEmpty == true || password.text?.isEmpty == true || reenterPassword.text?.isEmpty == true ||  name.text?.isEmpty == true || phoneNumber.text?.isEmpty == true {
+            
+            self.createAlertBox(message: "Please fill empty feilds.")
             return
         }
-        if password.text?.isEmpty == true {
-            print("password empty")
-            return
+
+        if password.text != reenterPassword.text {
+            self.createAlertBox(message: "Passwords do not match.")
+        } else {
+            register()
         }
-        if reenterPassword.text?.isEmpty == true || reenterPassword.text != password.text {
-            print("reenterPassword empty or wrong")
-            return
-        }
-        if name.text?.isEmpty == true {
-            print("name empty")
-            return
-        }
-        if phoneNumber.text?.isEmpty == true {
-            print("phoneNumber empty")
-            return
-        }
-        
-        register()
-        //create object
-//        let newUser = Users(context: self.context)
-//        newUser.name = name.text
-//        newUser.email = emailAddress.text
-//        newUser.phone_number = phoneNumber.text
-//        newUser.password = password.text
-//        
-        //save data
-//        do {
-//            try self.context.save()
-//            print("saved")
-//        } catch {
-//            print(error)
-//        }
-//
-//        self.fetchUsers()
     }
     
     func register() {
@@ -91,16 +44,21 @@ class RegisterViewController: UIViewController {
                                 "phoneNumber": self.phoneNumber.text]
                     let ref = Database.database().reference()
                 ref.child("users").child(authResult!.user.uid).setValue(userData)
-                } else {
-                    print(error!)
-                return
-            }
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(identifier: "Home")
-            homeVC.modalPresentationStyle = .overFullScreen
-            self.present(homeVC, animated: true, completion: nil)
+                
+                self.performSegue(withIdentifier: "goToHome", sender: self.registerContinueButton)
+                
+            } else {
+                self.createAlertBox(message: error!.localizedDescription)
+                }
+            
         }
     }
     
-
+    func createAlertBox(message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
