@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
             return
         }
 
-        if password.text != reenterPassword.text {
+        if passwordAndReenterPasswordAreNotEqual(password: password.text!, reenterPassword: reenterPassword.text!) {
             self.createAlertBox(message: "Passwords do not match.")
         } else {
             register()
@@ -42,15 +42,22 @@ class RegisterViewController: UIViewController {
             if error == nil {
                 let userData = ["name": self.name.text,
                                 "phoneNumber": self.phoneNumber.text]
-                    let ref = Database.database().reference()
+                let ref = Database.database().reference()
                 ref.child("users").child(authResult!.user.uid).setValue(userData)
                 
                 self.performSegue(withIdentifier: "goToHome", sender: self.registerContinueButton)
                 
             } else {
                 self.createAlertBox(message: error!.localizedDescription)
-                }
-            
+            }
+        }
+    }
+    
+    func passwordAndReenterPasswordAreNotEqual(password: String, reenterPassword: String) -> Bool {
+        if password != reenterPassword {
+            return true
+        } else {
+            return false
         }
     }
     
