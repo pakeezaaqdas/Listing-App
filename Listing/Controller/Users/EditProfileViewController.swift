@@ -15,6 +15,7 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +54,8 @@ class EditProfileViewController: UIViewController {
         
         database.child("users").child(uid!).setValue(userUpdatedData)
         print("Updated")
+        
+      self.performSegue(withIdentifier: "goToProfile", sender: self.saveButton)
     }
     
 }

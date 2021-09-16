@@ -13,8 +13,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginContinueButton: UIButton!
     
-    let user = UserModel?.self
+    // let user: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,21 @@ class LoginViewController: UIViewController {
                 
                 // show the alert
                 self!.present(alert, animated: true, completion: nil)
+            } else {
+                if self!.email.text == "admin@admin.com" {
+                    
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "AdminStoryboard", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "AdminHomePage")
+                    newViewController.modalPresentationStyle = .fullScreen
+                    self!.present(newViewController, animated: true, completion: nil)
+//                    self!.performSegue(withIdentifier: "AdminHomePage", sender: self!.loginContinueButton)
+                    
+                } else {
+                    self!.performSegue(withIdentifier: "goToHomeFromLogin", sender: self!.loginContinueButton)
+                }
+                
             }
+//            self?.user?.checkUserInfo()
             self!.checkUserInfo()
         }
     }

@@ -14,6 +14,7 @@ import FirebaseDatabase
 class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     private let database = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
     
     @IBOutlet weak var categoriesLabel: UITextField!
     @IBOutlet weak var adTitleLabel: UITextField!
@@ -24,7 +25,6 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let categories = ["Mobile", "Laptop", "Accesories"]
     let cities = ["Islamabad", "Lahore", "Peshawar", "Karachi"]
-    var adNum = 0
         
     var categoriesPickerView = UIPickerView()
     var citiesPickerView = UIPickerView()
@@ -78,7 +78,6 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
             image.delegate = self
             image.allowsEditing = true
             image.sourceType = .camera
-       //     image.mediaTypes = ["public.image"]
             self.present(image, animated: true, completion: nil)
         }
     }
@@ -128,22 +127,23 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         
-        adNum += 1
-        checkUserInfo()
+        if checkUserInfo() {
+            postAd(for: uid!)
+        }
     }
     
-    func checkUserInfo() {
+    func checkUserInfo() -> Bool {
         if Auth.auth().currentUser != nil {
-            let uid = Auth.auth().currentUser?.uid
-            print(uid!)
-            postAd(for: uid!)
-            
+      //      print(uid!)
+      //      postAd(for: uid!)
+            return true
         } else {
             print("Please login")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(identifier: "Login")
             homeVC.modalPresentationStyle = .overFullScreen
             self.present(homeVC, animated: true, completion: nil)
+            return false
         }
     }
     
@@ -156,13 +156,14 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func postAd(for uid: String) {
         
-        let adData = ["UID": uid,
+        let adData = ["uid": uid,
                       "category": self.categoriesLabel.text!,
                       "adTitle": self.adTitleLabel.text!,
                       "adDescription": self.descriptionLabel.text!,
                       "city": self.cityLabel.text!,
                       "price": self.priceLabel.text!,
-                      "isFavourite": "false"] as [String : Any]
+                      "isFavourite": "false",
+                      "timeStamp": ServerValue.timestamp()] as [String : Any]
         
         database.child("Ads").childByAutoId().setValue(adData)
     }

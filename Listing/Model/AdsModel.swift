@@ -6,9 +6,6 @@
 //
 
 import Foundation
-import Firebase
-
-//private let database = Database.database().reference()
 
 class AdsModel {
     
@@ -21,8 +18,9 @@ class AdsModel {
     let city: String
     let isFavourite: String
     let price: String
+//    let timeStamp: String
 
-    init(uid: String, adDescription: String, adTitle: String, category: String, city: String, isFavourite: String, price: String) {
+    init(uid: String, adDescription: String, adTitle: String, category: String, city: String, isFavourite: String, price: String/*, timeStamp:NSNumber*/) {
                 
         self.uid = uid
         self.adDescription = adDescription
@@ -31,5 +29,6 @@ class AdsModel {
         self.city = city
         self.isFavourite = isFavourite
         self.price = price
+//        self.timeStamp = timeStamp
     }
 }
