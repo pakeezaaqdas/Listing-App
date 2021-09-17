@@ -42,9 +42,6 @@ class MyAdsViewController: UITableViewController {
                     let city =  value.value(forKey: "city")
                     let isFavourite =  value.value(forKey: "isFavourite")
                     let price =  value.value(forKey: "price")
-//                    let timeStamp = value.value(forKey: "timeStamp")
-                    
-//                    print("this is \(userID)")
 
                     if self.uid == userID {
                         let ad = AdsModel(uid: userID , adDescription: adDescription! as! String, adTitle: adTitle! as! String, category: category! as! String, city: city! as! String, isFavourite: isFavourite! as! String , price: price! as! String)
@@ -54,8 +51,6 @@ class MyAdsViewController: UITableViewController {
                     
                 }
                 completionHandler(self.adArray)
-//                print(self.adArray)
-//                print(self.adArray.count)
             }
         }
     }

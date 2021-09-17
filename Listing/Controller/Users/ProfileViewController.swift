@@ -42,7 +42,6 @@ class ProfileViewController: UIViewController {
         
         if Auth.auth().currentUser != nil {
             let uid = Auth.auth().currentUser?.uid
-            print(uid)
             loginButton.isHidden = true
             registerButton.isHidden = true
             logoutButton.isHidden = false

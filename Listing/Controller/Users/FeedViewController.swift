@@ -16,20 +16,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let uid = Auth.auth().currentUser?.uid
     
-    var buttonPressed: String?
-    
-    @IBOutlet weak var newsButton: UIButton!
-    @IBOutlet weak var blogButton: UIButton!
     @IBOutlet weak var feedTables: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        newsButton.layer.borderWidth = 1
-        newsButton.layer.borderColor = #colorLiteral(red: 0.3598318398, green: 0.528265357, blue: 0.7762874961, alpha: 1)
-        
-        blogButton.layer.borderWidth = 1
-        blogButton.layer.borderColor = #colorLiteral(red: 0.3598318398, green: 0.528265357, blue: 0.7762874961, alpha: 1)
         
         feedTables.delegate = self
         feedTables.dataSource = self
@@ -41,17 +31,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.feedTables.reloadData()
             }
         }
-        
-    }
-    
-    @IBAction func newsButtonPressed(_ sender: UIButton) {
-        
-        self.feedTables.reloadData()
-        self.navigationController?.title = "News"
-        buttonPressed = newsButton.currentTitle
-    }
-    
-    @IBAction func blogButtonPressed(_ sender: UIButton) {
         
     }
     
@@ -77,19 +56,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //MARK: - table view functions
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if buttonPressed == "News" {
-            return newsArray.count
-        } else {
-            return 1
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {  return newsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BlogCell", for: indexPath)
-        if buttonPressed == "News" {
-            cell.textLabel?.text = self.newsArray[indexPath.row].newsTitle
-        }
+        cell.textLabel?.text = self.newsArray[indexPath.row].newsTitle
         
         return cell
     }

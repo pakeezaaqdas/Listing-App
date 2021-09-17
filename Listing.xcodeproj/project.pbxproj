@@ -17,7 +17,6 @@
 		2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52048D26E7452600F283DE /* LoginViewController.swift */; };
 		2E52049426E8A59900F283DE /* AdminStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */; };
 		2E52049626E8BCD900F283DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049526E8BCD900F283DE /* FeedViewController.swift */; };
-		2E52049826E8C1C500F283DE /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049726E8C1C400F283DE /* FavouritesViewController.swift */; };
 		2E52049A26E8E51900F283DE /* MyAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049926E8E51900F283DE /* MyAdsViewController.swift */; };
 		2E52049C26E8E5C900F283DE /* PostAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049B26E8E5C900F283DE /* PostAdViewController.swift */; };
 		2E52049E26E8E5F700F283DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52049D26E8E5F700F283DE /* ProfileViewController.swift */; };
@@ -25,7 +24,6 @@
 		2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */; };
 		2E52050426EB686900F283DE /* Listing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E52050226EB686900F283DE /* Listing.xcdatamodeld */; };
 		2E52050E26EE3FA500F283DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */; };
-		2E52051026EF171B00F283DE /* FavouriteCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */; };
 		2E52051426EF57BB00F283DE /* AdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52051326EF57BB00F283DE /* AdsModel.swift */; };
 		2E52051E26F11E8400F283DE /* Listing_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52051D26F11E8400F283DE /* Listing_Tests.swift */; };
 		2E52052826F1BCB100F283DE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52052726F1BCB100F283DE /* UserModel.swift */; };
@@ -37,6 +35,13 @@
 		2E52053626F2134100F283DE /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053526F2134100F283DE /* AddNewsViewController.swift */; };
 		2E52053A26F3090600F283DE /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */; };
 		2E52053C26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */; };
+		2E52054026F4605F00F283DE /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */; };
+		2E52054226F46CA300F283DE /* LoginViewControllerFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */; };
+		2E52054426F46DA600F283DE /* EditProfileViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */; };
+		2E52054626F47C0200F283DE /* NewsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054526F47C0200F283DE /* NewsModelTest.swift */; };
+		2E52054826F483B000F283DE /* AdminLogoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054726F483B000F283DE /* AdminLogoutTest.swift */; };
+		2E52054A26F485D300F283DE /* AdsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054926F485D300F283DE /* AdsModelTest.swift */; };
+		2E52054C26F48C1200F283DE /* AddNewsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */; };
 		3DB2AA350DA31840D6E77BB9 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */; };
 		7636A0CE620DA3A216C60815 /* libPods-Listing Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */; };
 /* End PBXBuildFile section */
@@ -64,7 +69,6 @@
 		2E52048D26E7452600F283DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryboard.storyboard; sourceTree = "<group>"; };
 		2E52049526E8BCD900F283DE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		2E52049726E8C1C400F283DE /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		2E52049926E8E51900F283DE /* MyAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
 		2E52049B26E8E5C900F283DE /* PostAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAdViewController.swift; sourceTree = "<group>"; };
 		2E52049D26E8E5F700F283DE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +76,6 @@
 		2E5204A126E9EE5E00F283DE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2E52050326EB686900F283DE /* Listing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Listing.xcdatamodel; sourceTree = "<group>"; };
 		2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCheckbox.swift; sourceTree = "<group>"; };
 		2E52051326EF57BB00F283DE /* AdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsModel.swift; sourceTree = "<group>"; };
 		2E52051B26F11E8300F283DE /* Listing Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Listing Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52051D26F11E8400F283DE /* Listing_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing_Tests.swift; sourceTree = "<group>"; };
@@ -86,6 +89,13 @@
 		2E52053526F2134100F283DE /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
 		2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerFunctionsTests.swift; sourceTree = "<group>"; };
+		2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFunctionsTest.swift; sourceTree = "<group>"; };
+		2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerTest.swift; sourceTree = "<group>"; };
+		2E52054526F47C0200F283DE /* NewsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModelTest.swift; sourceTree = "<group>"; };
+		2E52054726F483B000F283DE /* AdminLogoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLogoutTest.swift; sourceTree = "<group>"; };
+		2E52054926F485D300F283DE /* AdsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsModelTest.swift; sourceTree = "<group>"; };
+		2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewControllerTest.swift; sourceTree = "<group>"; };
 		3A11648D8350887EF3DBD31B /* Pods-Listing Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing Tests.release.xcconfig"; path = "Target Support Files/Pods-Listing Tests/Pods-Listing Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Listing Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Listing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +175,6 @@
 			children = (
 				2E52047A26E6419300F283DE /* Main.storyboard */,
 				2E52049326E8A59900F283DE /* AdminStoryboard.storyboard */,
-				2E52050F26EF171B00F283DE /* FavouriteCheckbox.swift */,
 				2E52052926F1C46900F283DE /* AdInfo.swift */,
 				2E52052B26F1DCDF00F283DE /* MyAdInfoCell.swift */,
 			);
@@ -189,6 +198,13 @@
 				2E52051F26F11E8400F283DE /* Info.plist */,
 				2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */,
 				2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */,
+				2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */,
+				2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */,
+				2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */,
+				2E52054526F47C0200F283DE /* NewsModelTest.swift */,
+				2E52054726F483B000F283DE /* AdminLogoutTest.swift */,
+				2E52054926F485D300F283DE /* AdsModelTest.swift */,
+				2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */,
 			);
 			path = "Listing Tests";
 			sourceTree = "<group>";
@@ -211,7 +227,6 @@
 				2E52048B26E7442700F283DE /* RegisterViewController.swift */,
 				2E52048D26E7452600F283DE /* LoginViewController.swift */,
 				2E52049526E8BCD900F283DE /* FeedViewController.swift */,
-				2E52049726E8C1C400F283DE /* FavouritesViewController.swift */,
 				2E52049926E8E51900F283DE /* MyAdsViewController.swift */,
 				2E52049B26E8E5C900F283DE /* PostAdViewController.swift */,
 				2E52049D26E8E5F700F283DE /* ProfileViewController.swift */,
@@ -409,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E52049826E8C1C500F283DE /* FavouritesViewController.swift in Sources */,
 				2E52050426EB686900F283DE /* Listing.xcdatamodeld in Sources */,
 				2E52049A26E8E51900F283DE /* MyAdsViewController.swift in Sources */,
 				2E52049E26E8E5F700F283DE /* ProfileViewController.swift in Sources */,
@@ -423,7 +437,6 @@
 				2E52052C26F1DCDF00F283DE /* MyAdInfoCell.swift in Sources */,
 				2E52052826F1BCB100F283DE /* UserModel.swift in Sources */,
 				2E5204A026E9E5FA00F283DE /* AdminNewsViewController.swift in Sources */,
-				2E52051026EF171B00F283DE /* FavouriteCheckbox.swift in Sources */,
 				2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */,
 				2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */,
 				2E52048E26E7452600F283DE /* LoginViewController.swift in Sources */,
@@ -438,7 +451,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E52054426F46DA600F283DE /* EditProfileViewControllerTest.swift in Sources */,
+				2E52054226F46CA300F283DE /* LoginViewControllerFunctionsTest.swift in Sources */,
+				2E52054026F4605F00F283DE /* LoginViewControllerTest.swift in Sources */,
+				2E52054C26F48C1200F283DE /* AddNewsViewControllerTest.swift in Sources */,
+				2E52054826F483B000F283DE /* AdminLogoutTest.swift in Sources */,
+				2E52054A26F485D300F283DE /* AdsModelTest.swift in Sources */,
 				2E52051E26F11E8400F283DE /* Listing_Tests.swift in Sources */,
+				2E52054626F47C0200F283DE /* NewsModelTest.swift in Sources */,
 				2E52053A26F3090600F283DE /* RegisterViewControllerTests.swift in Sources */,
 				2E52053C26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift in Sources */,
 			);

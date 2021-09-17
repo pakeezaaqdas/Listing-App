@@ -43,6 +43,8 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
         cityLabel.inputView = citiesPickerView
         
         adTitleLabel.delegate = self
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     //MARK: - Image functions
@@ -106,29 +108,18 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func postAdPressed(_ sender: UIButton) {
         
-        if categoriesLabel.text?.isEmpty == true {
-            print("Category empty")
+        if categoriesLabel.text?.isEmpty == true || cityLabel.text?.isEmpty == true || adTitleLabel.text?.isEmpty == true || descriptionLabel.text?.isEmpty == true || priceLabel.text?.isEmpty == true {
+            
+            createAlertBox(message: "Please fill empty fields")
             return
         }
-        if cityLabel.text?.isEmpty == true {
-            print("City empty")
-            return
-        }
-        if adTitleLabel.text?.isEmpty == true {
-            print("ad title empty")
-            return
-        }
-        if descriptionLabel.text?.isEmpty == true {
-            print("ad description empty")
-            return
-        }
-        if priceLabel.text?.isEmpty == true {
-            print("price empty")
-            return
-        }
-        
         if checkUserInfo() {
             postAd(for: uid!)
+            categoriesLabel.text = ""
+            adTitleLabel.text = ""
+            cityLabel.text = ""
+            priceLabel.text = ""
+            descriptionLabel.text = ""
         }
     }
     
@@ -138,6 +129,7 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
       //      postAd(for: uid!)
             return true
         } else {
+            view.endEditing(true)
             print("Please login")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(identifier: "Login")
@@ -203,5 +195,11 @@ extension PostAdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             cityLabel.resignFirstResponder()
         }
     }
-    
+    func createAlertBox(message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

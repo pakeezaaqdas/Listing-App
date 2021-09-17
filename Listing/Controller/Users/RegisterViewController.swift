@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func registerContinuePressed(_ sender: UIButton) {
@@ -45,8 +46,10 @@ class RegisterViewController: UIViewController {
                 let ref = Database.database().reference()
                 ref.child("users").child(authResult!.user.uid).setValue(userData)
                 
-                self.performSegue(withIdentifier: "goToHome", sender: self.registerContinueButton)
-                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "usersTabbar")
+                newViewController.modalPresentationStyle = .fullScreen
+                self.present(newViewController, animated: true, completion: nil)
             } else {
                 self.createAlertBox(message: error!.localizedDescription)
             }
@@ -68,4 +71,5 @@ class RegisterViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
 }

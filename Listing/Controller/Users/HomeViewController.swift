@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let database = Database.database().reference()
     var adArray: [AdsModel] = []
     let uid = Auth.auth().currentUser?.uid
+    var currentUserEmail = Auth.auth().currentUser?.email
     
     var userID: Any? = nil
     var adDescription: Any? = nil
@@ -22,15 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var isFavourite: Any? = nil
     var price: Any? = nil
     
-    let categories = ["Mobile", "Laptop", "Accesories"]
-    let cities = ["Islamabad", "Lahore", "Peshawar", "Karachi"]
-    
     @IBOutlet weak var postsTable: UITableView!
-    @IBOutlet weak var categoryTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    
-    var categoriesPickerView = UIPickerView()
-    var citiesPickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +31,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         postsTable.dataSource = self
         postsTable.delegate = self
         
-        categoriesPickerView.delegate = self
-        categoriesPickerView.dataSource = self
-        
-        citiesPickerView.delegate = self
-        citiesPickerView.dataSource = self
-        
-        categoryTextField.inputView = categoriesPickerView
-        cityTextField.inputView = citiesPickerView
-        
-        if Auth.auth().currentUser?.email == "admin@admin.com" {
+        if isCurrentUserAdmin() {
             let storyBoard: UIStoryboard = UIStoryboard(name: "AdminStoryboard", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "AdminHomePage")
             newViewController.modalPresentationStyle = .fullScreen
@@ -60,6 +44,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.postsTable.reloadData()
                 }
             }
+        }
+    }
+    
+    func isCurrentUserAdmin() -> Bool {
+        if currentUserEmail == "admin@admin.com" {
+            return true
+        } else {
+            return false
         }
     }
     
@@ -78,8 +70,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.price =  value.value(forKey: "price")
 
                     let ad = AdsModel(uid: self.userID! as! String, adDescription: self.adDescription! as! String, adTitle: self.adTitle! as! String, category: self.category! as! String, city: self.city! as! String, isFavourite: self.isFavourite! as! String , price: self.price! as! String)
-        
-                    self.appendArray(category: self.category as! String, city: self.city as! String, ad: ad)
+
+                        self.adArray.append(ad)
                 }
                 completionHandler(self.adArray)
                 print(self.adArray)
@@ -88,27 +80,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func appendArray(category: String, city: String, ad: AdsModel){
-        if categoryTextField.text == category && cityTextField.text == city {
-            adArray.append(ad)
-        }
-        else {
-            adArray.append(ad)
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        loadData { ads in
-            
-            self.adArray = ads
-            DispatchQueue.main.async {
-                self.postsTable.reloadData()
-            }
-        }
-    }
-    
+    //MARK: - table functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.adArray.count)
         return self.adArray.count
     }
     
@@ -121,46 +94,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.productImage.image = #imageLiteral(resourceName: "mobile-dummy")
     
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-//MARK: - PickerView methods
-
-extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == categoriesPickerView {
-            return categories.count
-        } else {
-            return cities.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == categoriesPickerView {
-            return categories[row]
-        } else {
-            return cities[row]
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == categoriesPickerView {
-            categoryTextField.text = categories[row]
-            categoryTextField.resignFirstResponder()
-        } else {
-            cityTextField.text = cities[row]
-            cityTextField.resignFirstResponder()
-        }
-    }
-    
-}
-
 
 
 

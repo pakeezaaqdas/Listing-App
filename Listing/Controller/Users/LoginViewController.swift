@@ -14,11 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginContinueButton: UIButton!
+    @IBOutlet weak var goToRegisterButton: UIButton!
     
     // let user: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,14 +66,8 @@ class LoginViewController: UIViewController {
             guard self != nil else {return}
             if error != nil {
                 print(error!)
-                // create the alert
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                self!.createAlertBox(message: error!.localizedDescription)
                 
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                
-                // show the alert
-                self!.present(alert, animated: true, completion: nil)
             } else {
                 if self!.email.text == "admin@admin.com" {
                     
@@ -78,14 +75,16 @@ class LoginViewController: UIViewController {
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "AdminHomePage")
                     newViewController.modalPresentationStyle = .fullScreen
                     self!.present(newViewController, animated: true, completion: nil)
-//                    self!.performSegue(withIdentifier: "AdminHomePage", sender: self!.loginContinueButton)
                     
                 } else {
-                    self!.performSegue(withIdentifier: "goToHomeFromLogin", sender: self!.loginContinueButton)
+                    
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "usersTabbar")
+                    newViewController.modalPresentationStyle = .fullScreen
+                    self!.present(newViewController, animated: true, completion: nil)
                 }
                 
             }
-//            self?.user?.checkUserInfo()
             self!.checkUserInfo()
         }
     }
@@ -94,5 +93,13 @@ class LoginViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             print(Auth.auth().currentUser?.uid)
         }
+    }
+    
+    func createAlertBox(message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

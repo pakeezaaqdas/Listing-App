@@ -14,68 +14,83 @@ class RegisterViewControllerTests: XCTestCase {
 
     override func setUpWithError() throws {
         
+        try super.setUpWithError()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
            
         sut = storyboard.instantiateViewController(withIdentifier: "register") as? RegisterViewController
         sut.loadViewIfNeeded()
-  //      sut.beginAppearanceTransition(true, animated: false)
+
         sut.emailAddress.text = "1@2.com"
+        sut.name.text = "Test"
+        sut.phoneNumber.text = "03361234567"
+        sut.password.text = "testing"
+        sut.reenterPassword.text = "testing"
     }
 
     override func tearDownWithError() throws {
         
         sut.endAppearanceTransition()
         sut = nil
-    }
-
-    func testRegisterForm_WhenLoaded_TextFieldAreConnected() throws {
-     _ = try XCTUnwrap(sut.emailAddress, "Email address UITextField is not connected")
-     _ = try XCTUnwrap(sut.name, "Name UITextField is not connected")
-     _ = try XCTUnwrap(sut.phoneNumber, "Phone number UITextField is not connected")
-     _ = try XCTUnwrap(sut.password, "Password UITextField is not connected")
-     _ = try XCTUnwrap(sut.reenterPassword, "Reenter password UITextField is not connected")
+        try super.tearDownWithError()
     }
     
     func testEmailTextField_WhenCreated_HasEmailAddressContentType_And_EmailKeyboardTypeSet() throws {
-        let emailTextField = try XCTUnwrap(sut.emailAddress, "Email address UITextField is not connected")
+        let emailTextField = try XCTUnwrap(sut.emailAddress)
         
-        XCTAssertEqual(emailTextField.textContentType, UITextContentType.emailAddress, "Email address UITextField does not have an Email Address Content Type set")
+        XCTAssertEqual(emailTextField.textContentType, UITextContentType.emailAddress)
         
-        XCTAssertEqual(emailTextField.keyboardType, UIKeyboardType.emailAddress, "Email Address UITextField does not have Email Keyboard type set")
+        XCTAssertEqual(emailTextField.keyboardType, UIKeyboardType.emailAddress)
         
-//        XCTAssertNotEqual(emailTextField.text, "", "Email UITextField is not empty")
+        XCTAssertNotEqual(emailTextField.text, "")
     }
     
     func testNameTextField_WhenCreated_HasNameContentType_And_AutoCapitalizationSet() throws {
-        let nameTextField = try XCTUnwrap(sut.name, "Name UITextField is not connected")
+        let nameTextField = try XCTUnwrap(sut.name)
         
-        XCTAssertEqual(nameTextField.textContentType, UITextContentType.name, "Name UITextField does not have an Name Content Type set")
+        XCTAssertEqual(nameTextField.textContentType, UITextContentType.name)
         
-        XCTAssertEqual(nameTextField.autocapitalizationType, UITextAutocapitalizationType.words, "Name UITextField does not captitalize each word")
+        XCTAssertEqual(nameTextField.autocapitalizationType, UITextAutocapitalizationType.words)
+        
+        XCTAssertNotEqual(nameTextField.text, "")
     }
     
     func testPhoneNumberTextField_WhenCreated_HasTelephoneNumberContentType_And_PhonePadKeyboardTypeSet() throws {
-        let numberTextField = try XCTUnwrap(sut.phoneNumber, "Name UITextField is not connected")
+        let numberTextField = try XCTUnwrap(sut.phoneNumber)
         
-        XCTAssertEqual(numberTextField.textContentType, UITextContentType.telephoneNumber, "Phone number UITextField does not have an Telephone Number Content Type set")
+        XCTAssertEqual(numberTextField.textContentType, UITextContentType.telephoneNumber)
         
-        XCTAssertEqual(numberTextField.keyboardType, UIKeyboardType.phonePad, "Phone Number UITextField does not have Phone Pad keyboard type")
+        XCTAssertEqual(numberTextField.keyboardType, UIKeyboardType.phonePad)
+        
+        XCTAssertNotEqual(numberTextField.text, "")
+
     }
     
     func testPasswordTextField_WhenCreated_IsSecureTextEntryField_And_HasPasswordContentTypeSet () throws {
-        let passwordTextField = try XCTUnwrap(sut.password, "The Password UITextField is not connected")
+        let passwordTextField = try XCTUnwrap(sut.password)
         
-        XCTAssertTrue(passwordTextField.isSecureTextEntry, "Password UITextField is not a Secure Text Entry Field")
+        XCTAssertTrue(passwordTextField.isSecureTextEntry)
         
-        XCTAssertEqual(passwordTextField.textContentType, UITextContentType.password, "Password UITextField does not have an Password Content Type set")
+        XCTAssertEqual(passwordTextField.textContentType, UITextContentType.password)
+        
+        XCTAssertNotEqual(passwordTextField.text, "")
+
     }
     
     func testReenterPasswordTextField_WhenCreated_IsSecureTextEntryField_And_HasPasswordContentTypeSet () throws {
         
-        let reenterPasswordTextField = try XCTUnwrap(sut.reenterPassword, "The Re-enter Password UITextField is not connected")
+        let reenterPasswordTextField = try XCTUnwrap(sut.reenterPassword)
         
-        XCTAssertTrue(reenterPasswordTextField.isSecureTextEntry, "Re-enter Password UITextField is not a Secure Text Entry Field")
+        XCTAssertTrue(reenterPasswordTextField.isSecureTextEntry)
         
-        XCTAssertEqual(reenterPasswordTextField.textContentType, UITextContentType.password, "Re-enter Password UITextField does not have an Password Content Type set")
+        XCTAssertEqual(reenterPasswordTextField.textContentType, UITextContentType.password)
+        
+        XCTAssertNotEqual(reenterPasswordTextField.text, "")
+
+    }
+    
+    func testRegisterContinueBtnVerify()
+    {
+        XCTAssertNotNil(sut.registerContinueButton)
     }
 }

@@ -21,7 +21,6 @@ class AdminLogoutController: UIViewController {
         do {
             try Auth.auth().signOut()
             loadView()
-//            checkUserInfo()
         } catch  {
             print(error)
         }
