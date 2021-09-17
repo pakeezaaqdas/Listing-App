@@ -8,6 +8,18 @@
 import UIKit
 import Firebase
 
+extension String {
+    var isValidURL: Bool {
+        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {
+            // it is a link, if the match covers the whole string
+            return match.range.length == self.utf16.count
+        } else {
+            return false
+        }
+    }
+}
+
 class AddNewsViewController: UIViewController {
 
     @IBOutlet weak var newsTitleTextField: UITextField!
@@ -19,8 +31,7 @@ class AddNewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func postPressed(_ sender: Any) {
@@ -29,7 +40,9 @@ class AddNewsViewController: UIViewController {
             
             self.createAlertBox(message: "Please fill empty feilds.")
             return
-        } else {
+        }
+        
+        if urlTextField.text?.isValidURL == true {
             post()
         }
         
@@ -55,4 +68,5 @@ class AddNewsViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
 }

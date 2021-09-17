@@ -13,6 +13,8 @@ class RegisterViewControllerFunctionsTests: XCTestCase {
     var sut: RegisterViewController!
 
     override func setUpWithError() throws {
+        
+        try super.setUpWithError()
         sut = RegisterViewController()
         sut.loadViewIfNeeded()
         sut.beginAppearanceTransition(true, animated: false)
@@ -22,6 +24,7 @@ class RegisterViewControllerFunctionsTests: XCTestCase {
         
         sut.endAppearanceTransition()
         sut = nil
+        try super.tearDownWithError()
     }
 
     func testPasswordAndReeneterPasswordAreNotEqual() {
@@ -37,6 +40,7 @@ class RegisterViewControllerFunctionsTests: XCTestCase {
     }
 
 }
+
 
 
 /*REGISTER AND REGISTER BUTTON PRESSED LEFT TO TEST*/

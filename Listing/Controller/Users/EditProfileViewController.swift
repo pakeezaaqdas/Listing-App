@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -57,5 +58,6 @@ class EditProfileViewController: UIViewController {
         
       self.performSegue(withIdentifier: "goToProfile", sender: self.saveButton)
     }
+    
     
 }

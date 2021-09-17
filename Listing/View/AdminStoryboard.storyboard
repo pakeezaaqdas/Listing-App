@@ -22,7 +22,6 @@
                     <connections>
                         <segue destination="Cnd-OE-cUL" kind="relationship" relationship="viewControllers" id="CVx-7M-Pnt"/>
                         <segue destination="7XO-LR-71T" kind="relationship" relationship="viewControllers" id="AoL-8M-tNP"/>
-                        <segue destination="pC1-Gs-YMH" kind="relationship" relationship="viewControllers" id="jEO-oe-PJa"/>
                         <segue destination="M3v-8s-ChG" kind="relationship" relationship="viewControllers" id="Kvv-4W-Bj8"/>
                     </connections>
                 </tabBarController>
@@ -65,24 +64,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vp3-Qy-F8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17" y="889"/>
-        </scene>
-        <!--Blog-->
-        <scene sceneID="GzJ-Lv-hLh">
-            <objects>
-                <navigationController id="pC1-Gs-YMH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Blog" image="book" catalog="system" id="D9N-wR-hYY"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ws-Ah-Yt0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.5124507546" green="0.56348949670000004" blue="0.78041768069999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ZND-bc-oZD" kind="relationship" relationship="rootViewController" id="2LA-9T-bn6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SlW-y2-cay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="935" y="889"/>
         </scene>
         <!--Users-->
         <scene sceneID="epN-tD-uKm">
@@ -177,17 +158,17 @@
                                             <constraint firstAttribute="height" constant="100" id="lAy-k6-eOi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SHP-ig-Bzq">
                                         <rect key="frame" x="0.0" y="110" width="382" height="471"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBI-l0-gga">
                                         <rect key="frame" x="0.0" y="591" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujg-yl-Bgv">
                                         <rect key="frame" x="0.0" y="635" width="382" height="50"/>
@@ -231,39 +212,10 @@
             </objects>
             <point key="canvasLocation" x="16" y="2367"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="k2O-JV-HHh">
-            <objects>
-                <tableViewController id="ZND-bc-oZD" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5ls-d4-T0w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vIy-Xw-6Ca">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vIy-Xw-6Ca" id="qPT-Gp-sZi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ZND-bc-oZD" id="oma-Zb-Mv0"/>
-                            <outlet property="delegate" destination="ZND-bc-oZD" id="l2d-c7-cXc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="H7Q-tf-U43"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n7a-xi-cfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="935" y="1608"/>
-        </scene>
         <!--Logout-->
         <scene sceneID="Z08-rk-QtG">
             <objects>
-                <viewController id="BjO-Ph-fvX" customClass="AdminLogoutController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="adminLogout" id="BjO-Ph-fvX" customClass="AdminLogoutController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J9A-X1-r2e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6e-4O-IdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753.6231884057972" y="1607.8125"/>
+            <point key="canvasLocation" x="958" y="1608"/>
         </scene>
         <!--Logout-->
         <scene sceneID="5ti-A9-y0a">
@@ -321,11 +273,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNd-Fj-QnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="889"/>
+            <point key="canvasLocation" x="959" y="889"/>
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
