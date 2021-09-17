@@ -93,4 +93,20 @@ class RegisterViewControllerTests: XCTestCase {
     {
         XCTAssertNotNil(sut.registerContinueButton)
     }
+    
+    //MARK: - view controller
+    
+    func testPasswordAndReeneterPasswordAreNotEqual() {
+        
+        XCTAssertTrue(sut.passwordAndReenterPasswordAreNotEqual(password: "qwerty", reenterPassword: "qwertu"))
+        
+        XCTAssertFalse(sut.passwordAndReenterPasswordAreNotEqual(password: "qwerty", reenterPassword: "qwerty"))
+    }
+    
+    func testCreateAlertBox() {
+    
+        sut.createAlertBox(message: "Error")
+    }
+
+    
 }

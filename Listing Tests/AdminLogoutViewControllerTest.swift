@@ -1,5 +1,5 @@
 //
-//  LoginViewControllerFunctionsTest.swift
+//  AdminLogoutTest.swift
 //  Listing Tests
 //
 //  Created by Pakeeza Aqdas on 17/09/2021.
@@ -8,16 +8,17 @@
 @testable import Listing
 import XCTest
 
-class LoginViewControllerFunctionsTest: XCTestCase {
+class AdminLogoutViewControllerTest: XCTestCase {
 
-    var sut: LoginViewController!
+    var sut: AdminLogoutController!
 
     override func setUpWithError() throws {
         
         try super.setUpWithError()
-        sut = LoginViewController()
+
+        let storyboard = UIStoryboard(name: "AdminStoryboard", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "adminLogout") as? AdminLogoutController
         sut.loadViewIfNeeded()
-        sut.beginAppearanceTransition(true, animated: false)
     }
 
     override func tearDownWithError() throws {
@@ -26,9 +27,9 @@ class LoginViewControllerFunctionsTest: XCTestCase {
         sut = nil
         try super.tearDownWithError()
     }
-    
-    func testCreateAlertBox() {
-    
-        sut.createAlertBox(message: "Error")
+
+    func testLogoutBtnVerify()
+    {
+        XCTAssertNotNil(sut.logoutButton)
     }
 }

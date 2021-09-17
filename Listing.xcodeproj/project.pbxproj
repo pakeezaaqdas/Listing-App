@@ -26,7 +26,6 @@
 		2E52050E26EE3FA500F283DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E52050D26EE3FA500F283DE /* GoogleService-Info.plist */; };
 		2E52051426EF57BB00F283DE /* AdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52051326EF57BB00F283DE /* AdsModel.swift */; };
 		2E52051E26F11E8400F283DE /* Listing_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52051D26F11E8400F283DE /* Listing_Tests.swift */; };
-		2E52052826F1BCB100F283DE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52052726F1BCB100F283DE /* UserModel.swift */; };
 		2E52052A26F1C46900F283DE /* AdInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52052926F1C46900F283DE /* AdInfo.swift */; };
 		2E52052C26F1DCDF00F283DE /* MyAdInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52052B26F1DCDF00F283DE /* MyAdInfoCell.swift */; };
 		2E52052E26F1F41600F283DE /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52052D26F1F41600F283DE /* NewsModel.swift */; };
@@ -34,14 +33,13 @@
 		2E52053226F20BF900F283DE /* AdminLogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053126F20BF900F283DE /* AdminLogoutController.swift */; };
 		2E52053626F2134100F283DE /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053526F2134100F283DE /* AddNewsViewController.swift */; };
 		2E52053A26F3090600F283DE /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */; };
-		2E52053C26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */; };
 		2E52054026F4605F00F283DE /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */; };
-		2E52054226F46CA300F283DE /* LoginViewControllerFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */; };
 		2E52054426F46DA600F283DE /* EditProfileViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */; };
 		2E52054626F47C0200F283DE /* NewsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054526F47C0200F283DE /* NewsModelTest.swift */; };
-		2E52054826F483B000F283DE /* AdminLogoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054726F483B000F283DE /* AdminLogoutTest.swift */; };
+		2E52054826F483B000F283DE /* AdminLogoutViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054726F483B000F283DE /* AdminLogoutViewControllerTest.swift */; };
 		2E52054A26F485D300F283DE /* AdsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054926F485D300F283DE /* AdsModelTest.swift */; };
 		2E52054C26F48C1200F283DE /* AddNewsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */; };
+		2E52055026F4979600F283DE /* PostAdViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52054F26F4979600F283DE /* PostAdViewControllerTest.swift */; };
 		3DB2AA350DA31840D6E77BB9 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */; };
 		7636A0CE620DA3A216C60815 /* libPods-Listing Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */; };
 /* End PBXBuildFile section */
@@ -80,7 +78,6 @@
 		2E52051B26F11E8300F283DE /* Listing Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Listing Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52051D26F11E8400F283DE /* Listing_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing_Tests.swift; sourceTree = "<group>"; };
 		2E52051F26F11E8400F283DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E52052726F1BCB100F283DE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2E52052926F1C46900F283DE /* AdInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdInfo.swift; sourceTree = "<group>"; };
 		2E52052B26F1DCDF00F283DE /* MyAdInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdInfoCell.swift; sourceTree = "<group>"; };
 		2E52052D26F1F41600F283DE /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
@@ -88,14 +85,13 @@
 		2E52053126F20BF900F283DE /* AdminLogoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLogoutController.swift; sourceTree = "<group>"; };
 		2E52053526F2134100F283DE /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
-		2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerFunctionsTests.swift; sourceTree = "<group>"; };
 		2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
-		2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFunctionsTest.swift; sourceTree = "<group>"; };
 		2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerTest.swift; sourceTree = "<group>"; };
 		2E52054526F47C0200F283DE /* NewsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModelTest.swift; sourceTree = "<group>"; };
-		2E52054726F483B000F283DE /* AdminLogoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLogoutTest.swift; sourceTree = "<group>"; };
+		2E52054726F483B000F283DE /* AdminLogoutViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLogoutViewControllerTest.swift; sourceTree = "<group>"; };
 		2E52054926F485D300F283DE /* AdsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsModelTest.swift; sourceTree = "<group>"; };
 		2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewControllerTest.swift; sourceTree = "<group>"; };
+		2E52054F26F4979600F283DE /* PostAdViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAdViewControllerTest.swift; sourceTree = "<group>"; };
 		3A11648D8350887EF3DBD31B /* Pods-Listing Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing Tests.release.xcconfig"; path = "Target Support Files/Pods-Listing Tests/Pods-Listing Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Listing Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Listing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				2E52051326EF57BB00F283DE /* AdsModel.swift */,
-				2E52052726F1BCB100F283DE /* UserModel.swift */,
 				2E52052D26F1F41600F283DE /* NewsModel.swift */,
 			);
 			path = Model;
@@ -197,14 +192,13 @@
 				2E52051D26F11E8400F283DE /* Listing_Tests.swift */,
 				2E52051F26F11E8400F283DE /* Info.plist */,
 				2E52053926F3090600F283DE /* RegisterViewControllerTests.swift */,
-				2E52053B26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift */,
 				2E52053F26F4605F00F283DE /* LoginViewControllerTest.swift */,
-				2E52054126F46CA300F283DE /* LoginViewControllerFunctionsTest.swift */,
 				2E52054326F46DA600F283DE /* EditProfileViewControllerTest.swift */,
 				2E52054526F47C0200F283DE /* NewsModelTest.swift */,
-				2E52054726F483B000F283DE /* AdminLogoutTest.swift */,
+				2E52054726F483B000F283DE /* AdminLogoutViewControllerTest.swift */,
 				2E52054926F485D300F283DE /* AdsModelTest.swift */,
 				2E52054B26F48C1200F283DE /* AddNewsViewControllerTest.swift */,
+				2E52054F26F4979600F283DE /* PostAdViewControllerTest.swift */,
 			);
 			path = "Listing Tests";
 			sourceTree = "<group>";
@@ -435,7 +429,6 @@
 				2E52047526E6419300F283DE /* AppDelegate.swift in Sources */,
 				2E52049C26E8E5C900F283DE /* PostAdViewController.swift in Sources */,
 				2E52052C26F1DCDF00F283DE /* MyAdInfoCell.swift in Sources */,
-				2E52052826F1BCB100F283DE /* UserModel.swift in Sources */,
 				2E5204A026E9E5FA00F283DE /* AdminNewsViewController.swift in Sources */,
 				2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */,
 				2E5204A226E9EE5E00F283DE /* EditProfileViewController.swift in Sources */,
@@ -452,15 +445,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E52054426F46DA600F283DE /* EditProfileViewControllerTest.swift in Sources */,
-				2E52054226F46CA300F283DE /* LoginViewControllerFunctionsTest.swift in Sources */,
+				2E52055026F4979600F283DE /* PostAdViewControllerTest.swift in Sources */,
 				2E52054026F4605F00F283DE /* LoginViewControllerTest.swift in Sources */,
 				2E52054C26F48C1200F283DE /* AddNewsViewControllerTest.swift in Sources */,
-				2E52054826F483B000F283DE /* AdminLogoutTest.swift in Sources */,
+				2E52054826F483B000F283DE /* AdminLogoutViewControllerTest.swift in Sources */,
 				2E52054A26F485D300F283DE /* AdsModelTest.swift in Sources */,
 				2E52051E26F11E8400F283DE /* Listing_Tests.swift in Sources */,
 				2E52054626F47C0200F283DE /* NewsModelTest.swift in Sources */,
 				2E52053A26F3090600F283DE /* RegisterViewControllerTests.swift in Sources */,
-				2E52053C26F31E1B00F283DE /* RegisterViewControllerFunctionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
