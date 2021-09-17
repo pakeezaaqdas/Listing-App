@@ -15,9 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginContinueButton: UIButton!
     @IBOutlet weak var goToRegisterButton: UIButton!
-    
-    // let user: UserModel?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -32,28 +30,12 @@ class LoginViewController: UIViewController {
 
         if email.text?.isEmpty == true {
             
-            // create the alert
-            let alert = UIAlertController(title: "Error", message: "Email field is empty.", preferredStyle: UIAlertController.Style.alert)
-            
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-
-            print("email empty")
+            createAlertBox(message: "Email field is empty.")
             return
         }
         
         if password.text?.isEmpty == true {
-            // create the alert
-            let alert = UIAlertController(title: "Error", message: "Password field is empty.", preferredStyle: UIAlertController.Style.alert)
-            
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+           createAlertBox(message: "Password field is empty.")
             return
         }
         

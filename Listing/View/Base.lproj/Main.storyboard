@@ -712,6 +712,7 @@
                         <outlet property="categoriesLabel" destination="YGf-0P-f8o" id="SoH-8M-b37"/>
                         <outlet property="cityLabel" destination="yPK-Pw-r3W" id="V7L-KJ-2a1"/>
                         <outlet property="descriptionLabel" destination="GIM-0T-F9O" id="6Yt-Qo-jkj"/>
+                        <outlet property="postAdButton" destination="kKq-IL-gjn" id="RRj-dz-rQj"/>
                         <outlet property="priceLabel" destination="EET-fM-LTb" id="sgj-zd-xi8"/>
                         <outlet property="productImage" destination="mpf-0c-8Ym" id="Z7J-l1-hz9"/>
                     </connections>
@@ -1200,13 +1201,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yl6-yx-dPO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="40.666666666666664"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Oppo xr24e3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a7-gs-dze">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oppo xr24e3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a7-gs-dze">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rs. 25000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-JU-kBJ">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs. 25000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-JU-kBJ">
                                                                                     <rect key="frame" x="0.0" y="20.333333333333329" width="150" height="20.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>

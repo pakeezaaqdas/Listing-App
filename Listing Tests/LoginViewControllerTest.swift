@@ -69,4 +69,10 @@ class LoginViewControllerTest: XCTestCase {
         XCTAssertNotNil(sut.goToRegisterButton)
     }
 
+    //MARK: - view controller
+    
+    func testCreateAlertBox() {
+    
+        sut.createAlertBox(message: "Error")
+    }
 }

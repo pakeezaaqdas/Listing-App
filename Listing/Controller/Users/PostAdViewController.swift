@@ -21,6 +21,7 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var priceLabel: UITextField!
+    @IBOutlet weak var postAdButton: UIButton!
     
     
     let categories = ["Mobile", "Laptop", "Accesories"]
@@ -49,60 +50,60 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     //MARK: - Image functions
     
-    @IBAction func onClickAddImage(_ sender: Any) {
-        
-        print("Image tapped")
-        actionSheet()
-    }
-
-    func actionSheet(){
-        let alert = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (handler) in
-            self.openCamera()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Open Gallery", style: .default, handler: { (handler) in
-            self.openGallery()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
-            
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func openCamera() {
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let image = UIImagePickerController()
-            image.delegate = self
-            image.allowsEditing = true
-            image.sourceType = .camera
-            self.present(image, animated: true, completion: nil)
-        }
-    }
-    
-    func openGallery() {
-        
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let image = UIImagePickerController()
-            image.delegate = self
-            image.sourceType = .photoLibrary
-            image.allowsEditing = true
-            self.present(image, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [
-                               String : Any]) {
-        
-        let chosenImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as! UIImage
-        productImage.image = chosenImage
-        dismiss(animated: true, completion: nil)
-    }
-    
+//    @IBAction func onClickAddImage(_ sender: Any) {
+//        
+//        print("Image tapped")
+//        actionSheet()
+//    }
+//
+//    func actionSheet(){
+//        let alert = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
+//        
+//        alert.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (handler) in
+//            self.openCamera()
+//        }))
+//        
+//        alert.addAction(UIAlertAction(title: "Open Gallery", style: .default, handler: { (handler) in
+//            self.openGallery()
+//        }))
+//        
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
+//            
+//        }))
+//        
+//        self.present(alert, animated: true, completion: nil)
+//    }
+//    
+//    func openCamera() {
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            let image = UIImagePickerController()
+//            image.delegate = self
+//            image.allowsEditing = true
+//            image.sourceType = .camera
+//            self.present(image, animated: true, completion: nil)
+//        }
+//    }
+//    
+//    func openGallery() {
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            let image = UIImagePickerController()
+//            image.delegate = self
+//            image.sourceType = .photoLibrary
+//            image.allowsEditing = true
+//            self.present(image, animated: true, completion: nil)
+//        }
+//    }
+//    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [
+//                               String : Any]) {
+//        
+//        let chosenImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as! UIImage
+//        productImage.image = chosenImage
+//        dismiss(animated: true, completion: nil)
+//    }
+//    
     
     //MARK: - Firebase methods
     
