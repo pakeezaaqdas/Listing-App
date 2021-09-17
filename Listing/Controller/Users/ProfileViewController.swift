@@ -13,11 +13,14 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController {
     
     private let database = Database.database().reference()
+    
+    var currentUser = Auth.auth().currentUser
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var myAdsButton: UIButton!
+    @IBOutlet weak var contactUsButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -31,16 +34,10 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         checkUserInfo()
     }
-//    @IBAction func goToAdmin(_ sender: UIButton) {
-//
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "AdminStoryboard", bundle: nil)
-//        let balanceViewController = storyBoard.instantiateViewController(withIdentifier: "addNews") as! AddNewsViewController
-//        self.present(balanceViewController, animated: true, completion: nil)
-//    }
-//
+
     func checkUserInfo() {
         
-        if Auth.auth().currentUser != nil {
+        if currentUser != nil {
             let uid = Auth.auth().currentUser?.uid
             loginButton.isHidden = true
             registerButton.isHidden = true

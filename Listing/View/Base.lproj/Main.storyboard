@@ -437,7 +437,7 @@
             <objects>
                 <tableViewController id="A4l-zq-wTl" customClass="MyAdsViewController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0NZ-21-GSo">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -984,6 +984,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="More" id="s2j-zQ-MJd"/>
                     <connections>
+                        <outlet property="contactUsButton" destination="ZFm-9p-Zxj" id="zp9-2l-jkt"/>
                         <outlet property="editProfileButton" destination="bcC-qY-aI1" id="g8a-4H-WZY"/>
                         <outlet property="loginButton" destination="FCT-D7-F8W" id="vAy-FT-CIn"/>
                         <outlet property="logoutButton" destination="zHE-cm-O99" id="w3n-dK-Oxh"/>
@@ -1001,7 +1002,7 @@
         <!--Edit Profile-->
         <scene sceneID="poI-FO-mlF">
             <objects>
-                <viewController id="qCL-E0-rHQ" customClass="EditProfileViewController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editProfile" id="qCL-E0-rHQ" customClass="EditProfileViewController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pha-Ul-bgZ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1027,7 +1028,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="GqT-Cn-o8d"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -1046,7 +1047,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="4be-95-7Ic"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -1201,13 +1202,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yl6-yx-dPO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="40.666666666666664"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oppo xr24e3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a7-gs-dze">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Oppo xr24e3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a7-gs-dze">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs. 25000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-JU-kBJ">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rs. 25000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-JU-kBJ">
                                                                                     <rect key="frame" x="0.0" y="20.333333333333329" width="150" height="20.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
@@ -1258,9 +1259,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="OsO-HB-qqg"/>
         <segue reference="MrQ-Zh-Vwi"/>
-        <segue reference="8tJ-cU-Npt"/>
-        <segue reference="eLK-Lg-UgJ"/>
+        <segue reference="cIu-qr-Bsv"/>
+        <segue reference="0b9-GD-oLA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
