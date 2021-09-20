@@ -74,8 +74,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         self.adArray.append(ad)
                 }
                 completionHandler(self.adArray)
-                print(self.adArray)
-                print(self.adArray.count)
             }
         }
     }
