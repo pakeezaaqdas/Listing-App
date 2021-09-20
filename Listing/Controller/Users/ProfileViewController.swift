@@ -13,8 +13,6 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController {
     
     private let database = Database.database().reference()
-    
-    var currentUser = Auth.auth().currentUser
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -37,7 +35,7 @@ class ProfileViewController: UIViewController {
 
     func checkUserInfo() {
         
-        if currentUser != nil {
+        if Auth.auth().currentUser != nil {
             let uid = Auth.auth().currentUser?.uid
             loginButton.isHidden = true
             registerButton.isHidden = true

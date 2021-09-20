@@ -63,11 +63,6 @@ class ProfileViewControllerTest: XCTestCase {
         XCTAssertNotNil(sut.contactUsButton)
     }
     
-    func testCurrentUserIsNil() {
-        sut.currentUser = nil
-        XCTAssertNil(sut.currentUser)
-    }
-    
 //    func testCurrentUserIsNotNil() {
 //        sut.currentUser = FIRUser: 0x600000729700
 //        XCTAssertNotNil(sut.currentUser)

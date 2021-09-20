@@ -42,7 +42,12 @@ class AddNewsViewController: UIViewController {
             return
         }
         
-        if urlTextField.text?.isValidURL == true {
+        if urlTextField.text?.isValidURL != true {
+            
+            self.createAlertBox(message: "url is incorrect")
+            return
+            
+        } else {
             post()
         }
         
