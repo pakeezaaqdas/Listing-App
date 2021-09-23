@@ -8,28 +8,25 @@
 import UIKit
 import Firebase
 
-class AdminLogoutController: UIViewController {
+class AdminLogoutController: BaseViewController {
+    
+    var message = ""
 
     @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        message = "not logged out"
     }
     
     @IBAction func logoutPressed(_ sender: UIButton) {
-        
         do {
             try Auth.auth().signOut()
             loadView()
+            self.goToUserHomeView()
         } catch  {
-            print(error)
+            self.createAlertBox(message: error.localizedDescription)
         }
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "usersTabbar")
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
-        
+        message = "logoutPressed"
     }
-    
 }

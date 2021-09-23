@@ -54,5 +54,25 @@ class AddNewsViewControllerTest: XCTestCase {
     
         sut.createAlertBox(message: "Error")
     }
+    
+    func testPostPressed() {
+        sut.newsTitleTextField.text = ""
+        sut.postPressed(sut.postButton!)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.newsTitleTextField.text = "test"
+        sut.newsDescriptionTextField.text = ""
+        sut.postPressed(sut.postButton!)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+
+        sut.newsDescriptionTextField.text = "test"
+        sut.urlTextField.text = ""
+        sut.postPressed(sut.postButton!)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+
+        sut.urlTextField.text = "test"
+        sut.postPressed(sut.postButton!)
+        XCTAssertEqual(sut.message, "url is incorrect")
+    }
 
 }

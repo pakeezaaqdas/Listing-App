@@ -68,5 +68,17 @@ class HomeViewControllerTest: XCTestCase {
         XCTAssertNotNil(sut.self as? UITableViewDataSource.Type != nil)
         
     }
+    
+    func testIfConditionViewDidLoad(){
+        sut.currentUserEmail = "admin@admin.com"
+        sut.viewDidLoad()
+        XCTAssertEqual(sut.status, "Current user is admin")
+        
+        sut.currentUserEmail = "test@test.com"
+        sut.viewDidLoad()
+        XCTAssertEqual(sut.status, "Current user is not admin")
+    }
+    
+    
 
 }

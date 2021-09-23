@@ -32,4 +32,9 @@ class AdminLogoutViewControllerTest: XCTestCase {
     {
         XCTAssertNotNil(sut.logoutButton)
     }
+    
+    func testlogoutPressed() {
+        sut.logoutPressed(sut.logoutButton)
+        XCTAssertEqual(sut.message, "logoutPressed")
+    }
 }

@@ -6,15 +6,8 @@
 //
 
 import UIKit
-import Firebase
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    private let database = Database.database().reference()
-    
-    var newsArray: [NewsModel] = []
-    
-    let uid = Auth.auth().currentUser?.uid
+class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var feedTables: UITableView!
     
@@ -24,33 +17,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         feedTables.delegate = self
         feedTables.dataSource = self
         
-        loadNews { news in
+        self.getFromNews { news in
             
             self.newsArray = news
             DispatchQueue.main.async {
                 self.feedTables.reloadData()
             }
-        }
-        
-    }
-    
-    func loadNews(completionHandler: @escaping ([NewsModel]) -> ()) {
-        database.child("News").observe(.value) { snapshot in
-            if let dictionary = snapshot.value as? [String: Any] {
-                for keyValue in dictionary {
-                    let value = keyValue.value as! NSDictionary
-                    
-                    let newsTitle = value.value(forKey: "newsTitle") as! String
-                    let newsDetails = value.value(forKey: "newsDetails") as! String
-                    let url =  value.value(forKey: "url") as! String
-                    
-                    let news = NewsModel(newsTitle: newsTitle, newsDescription: newsDetails, newsURL: url)
-                    
-                    self.newsArray.append(news)
-                }
-                
-            }
-            completionHandler(self.newsArray)
         }
     }
     
@@ -71,5 +43,32 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         UIApplication.shared.open(url)
     }
 }
+
+//private let database = Database.database().reference()
+
+//    func loadNews(completionHandler: @escaping ([NewsModel]) -> ()) {
+//        database.child("News").observe(.value) { snapshot in
+//            if let dictionary = snapshot.value as? [String: Any] {
+//                for keyValue in dictionary {
+//                    let value = keyValue.value as! NSDictionary
+//
+//                    let newsTitle = value.value(forKey: "newsTitle") as! String
+//                    let newsDetails = value.value(forKey: "newsDetails") as! String
+//                    let url =  value.value(forKey: "url") as! String
+//
+//                    let news = NewsModel(newsTitle: newsTitle, newsDescription: newsDetails, newsURL: url)
+//
+//                    self.newsArray.append(news)
+//                }
+//
+//            }
+//            completionHandler(self.newsArray)
+//        }
+//    }
+
+//    func append(news: NewsModel, completionHandler: @escaping ([NewsModel]) -> ()) {
+//        newsArray.append(news)
+//        completionHandler(self.newsArray)
+//    }
 
 
