@@ -60,5 +60,19 @@ class EditProfileViewControllerTest: XCTestCase {
     {
         XCTAssertNotNil(sut.saveButton)
     }
+    
+    func testSetUserInfo() {
+        sut.name = "Test"
+        sut.number = "1234567"
+        sut.setUserInfo()
+        
+        XCTAssertEqual(sut.nameTextField.text, sut.name)
+        XCTAssertEqual(sut.numberTextField.text, sut.number)
+    }
+    
+    func testSavePressed() {
+        sut.savePressed(sut.saveButton)
+        XCTAssertEqual(sut.status, "Updated")
+    }
 
 }

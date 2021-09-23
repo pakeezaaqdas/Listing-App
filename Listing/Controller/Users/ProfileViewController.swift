@@ -7,12 +7,12 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
     
     private let database = Database.database().reference()
+    
+    var status = ""
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,13 +35,16 @@ class ProfileViewController: UIViewController {
     func checkUserInfo() {
         
         if Auth.auth().currentUser != nil {
-            let uid = Auth.auth().currentUser?.uid
+    
             loginButton.isHidden = true
             registerButton.isHidden = true
             logoutButton.isHidden = false
             editProfileButton.isHidden = false
             myAdsButton.isHidden = false
-            getUserInfo(with: uid!)
+            self.getUserInfo{ name, number in
+                self.setUserInfo()
+            }
+            status = "not logged out"
             
         } else {
             loginButton.isHidden = false
@@ -53,6 +55,7 @@ class ProfileViewController: UIViewController {
             nameLabel.isHidden = true
             phoneNumberLabel.isHidden = true
             profileImage.isHidden = true
+            status = "logged out"
         }
     }
 
@@ -62,22 +65,16 @@ class ProfileViewController: UIViewController {
             try Auth.auth().signOut()
             loadView()
             checkUserInfo()
+            
         } catch  {
             print(error)
         }
+        status = "logOutPressed ran"
+
     }
     
-    func getUserInfo(with uid: String) {
-        
-        database.child("users").child(uid).observe(.value) { snapshot in
-            if let dictionary = snapshot.value as? [String: Any] {
-                let name = dictionary["name"] as! String
-                let number = dictionary["phoneNumber"] as! String
-                
-                self.nameLabel.text = name
-                self.phoneNumberLabel.text = number
-            }
-        }
+    func setUserInfo() {
+        self.nameLabel.text = name
+        self.phoneNumberLabel.text = number
     }
-
 }

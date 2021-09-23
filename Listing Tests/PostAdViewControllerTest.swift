@@ -84,4 +84,40 @@ class PostAdViewControllerTest: XCTestCase {
     
         sut.createAlertBox(message: "Error")
     }
+    
+    func testPostAdPressed() {
+        sut.categoriesLabel.text = ""
+        sut.postAdPressed(sut.postAdButton)
+        XCTAssertEqual(sut.message, "Please fill empty fields")
+        
+        sut.categoriesLabel.text = "Test"
+        sut.cityLabel.text = ""
+        sut.postAdPressed(sut.postAdButton)
+        XCTAssertEqual(sut.message, "Please fill empty fields")
+        
+        sut.cityLabel.text = "Test"
+        sut.adTitleLabel.text = ""
+        sut.postAdPressed(sut.postAdButton)
+        XCTAssertEqual(sut.message, "Please fill empty fields")
+        
+        sut.adTitleLabel.text = "Test"
+        sut.descriptionLabel.text = ""
+        sut.postAdPressed(sut.postAdButton)
+        XCTAssertEqual(sut.message, "Please fill empty fields")
+        
+        sut.descriptionLabel.text = "Test"
+        sut.priceLabel.text? = ""
+        sut.postAdPressed(sut.postAdButton)
+        XCTAssertEqual(sut.message, "Please fill empty fields")
+   }
+    
+    func testSetTextFieldsEmpty()
+    {
+        sut.setTextFieldsEmpty()
+        XCTAssertEqual(sut.categoriesLabel.text, "")
+        XCTAssertEqual(sut.adTitleLabel.text, "")
+        XCTAssertEqual(sut.cityLabel.text, "")
+        XCTAssertEqual(sut.priceLabel.text, "")
+        XCTAssertEqual(sut.descriptionLabel.text, "")
+    }
 }

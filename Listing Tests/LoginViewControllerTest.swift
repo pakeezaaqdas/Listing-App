@@ -33,11 +33,6 @@ class LoginViewControllerTest: XCTestCase {
         
         try super.tearDownWithError()
     }
-    
-//    func testLoginForm_WhenLoaded_TextFieldAreConnected() throws {
-//     _ = try XCTUnwrap(sut.email)
-//     _ = try XCTUnwrap(sut.password)
-//    }
 
     func testEmailTextField_WhenCreated_HasEmailAddressContentType_And_EmailKeyboardTypeSet() throws {
         let emailTextField = try XCTUnwrap(sut.email)
@@ -74,5 +69,27 @@ class LoginViewControllerTest: XCTestCase {
     func testCreateAlertBox() {
     
         sut.createAlertBox(message: "Error")
+    }
+    
+    func testLoginButtonPressed(){
+        
+        sut.email.text = ""
+        sut.loginContinuePressed(sut.loginContinueButton)
+        XCTAssertEqual(sut.message!, "Email field is empty.")
+        
+        sut.email.text = "test@test.com"
+        sut.password.text = ""
+        sut.loginContinuePressed(sut.loginContinueButton)
+        XCTAssertEqual(sut.message!, "Password field is empty.")
+        
+        sut.password.text = "test"
+        sut.loginContinuePressed(sut.loginContinueButton)
+        XCTAssertEqual(sut.status, "logging in")
+    }
+    
+    func testLogin() {
+    
+        sut.login()
+        XCTAssertEqual(sut.status, "login() ran")
     }
 }

@@ -22,7 +22,7 @@ class RegisterViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
 
         sut.emailAddress.text = "1@2.com"
-        sut.name.text = "Test"
+        sut.nameTextField.text = "Test"
         sut.phoneNumber.text = "03361234567"
         sut.password.text = "testing"
         sut.reenterPassword.text = "testing"
@@ -46,7 +46,7 @@ class RegisterViewControllerTests: XCTestCase {
     }
     
     func testNameTextField_WhenCreated_HasNameContentType_And_AutoCapitalizationSet() throws {
-        let nameTextField = try XCTUnwrap(sut.name)
+        let nameTextField = try XCTUnwrap(sut.nameTextField)
         
         XCTAssertEqual(nameTextField.textContentType, UITextContentType.name)
         
@@ -106,6 +106,42 @@ class RegisterViewControllerTests: XCTestCase {
     func testCreateAlertBox() {
     
         sut.createAlertBox(message: "Error")
+    }
+    
+    func testRegisterContinuePressed() {
+        
+        sut.emailAddress.text = ""
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.emailAddress.text = "test@test.com"
+        sut.password.text = ""
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.password.text = "test"
+        sut.reenterPassword.text = ""
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.reenterPassword.text = "test"
+        sut.nameTextField.text = ""
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.nameTextField.text = "test"
+        sut.phoneNumber.text = ""
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Please fill empty feilds.")
+        
+        sut.phoneNumber.text = "1234567"
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "registering")
+        
+        sut.password.text = "test"
+        sut.reenterPassword.text = "1234"
+        sut.registerContinuePressed(sut.registerContinueButton)
+        XCTAssertEqual(sut.message, "Passwords do not match.")
     }
 
     

@@ -421,7 +421,7 @@
                     <navigationItem key="navigationItem" title="Register" id="DZM-77-a0n"/>
                     <connections>
                         <outlet property="emailAddress" destination="M39-yx-wfm" id="PJU-1H-vjH"/>
-                        <outlet property="name" destination="g8G-SQ-UKm" id="nz5-xH-cDp"/>
+                        <outlet property="nameTextField" destination="g8G-SQ-UKm" id="nz5-xH-cDp"/>
                         <outlet property="password" destination="7sL-YD-Kin" id="7Zo-L9-B2q"/>
                         <outlet property="phoneNumber" destination="5oa-HP-eAf" id="iSN-q3-tgh"/>
                         <outlet property="reenterPassword" destination="g3N-N7-9pi" id="YTu-G0-ZJL"/>
@@ -683,7 +683,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="postAdPressed:" destination="3mY-gr-t6s" eventType="touchUpInside" id="7ms-eB-QS0"/>
-                                                    <segue destination="A4l-zq-wTl" kind="show" id="8tJ-cU-Npt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -715,6 +714,7 @@
                         <outlet property="postAdButton" destination="kKq-IL-gjn" id="RRj-dz-rQj"/>
                         <outlet property="priceLabel" destination="EET-fM-LTb" id="sgj-zd-xi8"/>
                         <outlet property="productImage" destination="mpf-0c-8Ym" id="Z7J-l1-hz9"/>
+                        <segue destination="A4l-zq-wTl" kind="show" identifier="goToMyAds" id="KKy-jn-viO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pH-KV-LcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1004,7 +1004,7 @@
             <objects>
                 <viewController storyboardIdentifier="editProfile" id="qCL-E0-rHQ" customClass="EditProfileViewController" customModule="Listing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pha-Ul-bgZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GHy-c3-Cyh">
@@ -1260,7 +1260,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MrQ-Zh-Vwi"/>
-        <segue reference="8tJ-cU-Npt"/>
+        <segue reference="KKy-jn-viO"/>
         <segue reference="0b9-GD-oLA"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E495A6D26FAD07600C07D06 /* BaseViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E495A6C26FAD07600C07D06 /* BaseViewControllerTest.swift */; };
 		2E52047526E6419300F283DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047426E6419300F283DE /* AppDelegate.swift */; };
 		2E52047726E6419300F283DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047626E6419300F283DE /* SceneDelegate.swift */; };
 		2E52047926E6419300F283DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52047826E6419300F283DE /* HomeViewController.swift */; };
@@ -46,6 +47,7 @@
 		2E52055826F4CBA100F283DE /* MyAdsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52055726F4CBA100F283DE /* MyAdsViewControllerTest.swift */; };
 		2E52055A26F84F0300F283DE /* AdminViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52055926F84F0300F283DE /* AdminViewControllerTest.swift */; };
 		2E52055C26F8509D00F283DE /* AdminNewsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52055B26F8509D00F283DE /* AdminNewsViewControllerTest.swift */; };
+		2E52055E26F86E3800F283DE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52055D26F86E3800F283DE /* BaseViewController.swift */; };
 		3DB2AA350DA31840D6E77BB9 /* Pods_Listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */; };
 		7636A0CE620DA3A216C60815 /* libPods-Listing Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E495A6C26FAD07600C07D06 /* BaseViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTest.swift; sourceTree = "<group>"; };
 		2E52047126E6419300F283DE /* Listing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Listing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52047426E6419300F283DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E52047626E6419300F283DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		2E52055726F4CBA100F283DE /* MyAdsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsViewControllerTest.swift; sourceTree = "<group>"; };
 		2E52055926F84F0300F283DE /* AdminViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewControllerTest.swift; sourceTree = "<group>"; };
 		2E52055B26F8509D00F283DE /* AdminNewsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNewsViewControllerTest.swift; sourceTree = "<group>"; };
+		2E52055D26F86E3800F283DE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3A11648D8350887EF3DBD31B /* Pods-Listing Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Listing Tests.release.xcconfig"; path = "Target Support Files/Pods-Listing Tests/Pods-Listing Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4CC55E83D32AC4DD578DAA84 /* libPods-Listing Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Listing Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0E22484A8BBC74CC8BA028 /* Pods_Listing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Listing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +176,7 @@
 		2E52048826E743E500F283DE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2E52055D26F86E3800F283DE /* BaseViewController.swift */,
 				2E52053426F2108A00F283DE /* Users */,
 				2E52053326F2108000F283DE /* Admin */,
 			);
@@ -217,6 +222,7 @@
 				2E52054726F483B000F283DE /* AdminLogoutViewControllerTest.swift */,
 				2E52051F26F11E8400F283DE /* Info.plist */,
 				2E52051D26F11E8400F283DE /* Listing_Tests.swift */,
+				2E495A6C26FAD07600C07D06 /* BaseViewControllerTest.swift */,
 			);
 			path = "Listing Tests";
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				2E52049E26E8E5F700F283DE /* ProfileViewController.swift in Sources */,
 				2E52052E26F1F41600F283DE /* NewsModel.swift in Sources */,
 				2E52052A26F1C46900F283DE /* AdInfo.swift in Sources */,
+				2E52055E26F86E3800F283DE /* BaseViewController.swift in Sources */,
 				2E52053626F2134100F283DE /* AddNewsViewController.swift in Sources */,
 				2E52053226F20BF900F283DE /* AdminLogoutController.swift in Sources */,
 				2E52047926E6419300F283DE /* HomeViewController.swift in Sources */,
@@ -463,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E52054426F46DA600F283DE /* EditProfileViewControllerTest.swift in Sources */,
+				2E495A6D26FAD07600C07D06 /* BaseViewControllerTest.swift in Sources */,
 				2E52055426F4B57D00F283DE /* HomeViewControllerTest.swift in Sources */,
 				2E52055026F4979600F283DE /* PostAdViewControllerTest.swift in Sources */,
 				2E52055826F4CBA100F283DE /* MyAdsViewControllerTest.swift in Sources */,

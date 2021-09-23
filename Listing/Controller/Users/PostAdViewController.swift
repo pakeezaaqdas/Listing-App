@@ -6,15 +6,11 @@
 //
 
 import UIKit
-import MobileCoreServices
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
-class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class PostAdViewController: BaseViewController, UITextFieldDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     
-    private let database = Database.database().reference()
-    let uid = Auth.auth().currentUser?.uid
+    var message: String?
     
     @IBOutlet weak var categoriesLabel: UITextField!
     @IBOutlet weak var adTitleLabel: UITextField!
@@ -22,6 +18,8 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cityLabel: UITextField!
     @IBOutlet weak var priceLabel: UITextField!
     @IBOutlet weak var postAdButton: UIButton!
+    
+    private let database = Database.database().reference()
     
     
     let categories = ["Mobile", "Laptop", "Accesories"]
@@ -33,6 +31,8 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var productImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        message = ""
         
         categoriesPickerView.delegate = self
         categoriesPickerView.dataSource = self
@@ -48,94 +48,38 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     }
     
-    //MARK: - Image functions
-    
-//    @IBAction func onClickAddImage(_ sender: Any) {
-//        
-//        print("Image tapped")
-//        actionSheet()
-//    }
-//
-//    func actionSheet(){
-//        let alert = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
-//        
-//        alert.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (handler) in
-//            self.openCamera()
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Open Gallery", style: .default, handler: { (handler) in
-//            self.openGallery()
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
-//            
-//        }))
-//        
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//    
-//    func openCamera() {
-//        
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            let image = UIImagePickerController()
-//            image.delegate = self
-//            image.allowsEditing = true
-//            image.sourceType = .camera
-//            self.present(image, animated: true, completion: nil)
-//        }
-//    }
-//    
-//    func openGallery() {
-//        
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            let image = UIImagePickerController()
-//            image.delegate = self
-//            image.sourceType = .photoLibrary
-//            image.allowsEditing = true
-//            self.present(image, animated: true, completion: nil)
-//        }
-//    }
-//    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [
-//                               String : Any]) {
-//        
-//        let chosenImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as! UIImage
-//        productImage.image = chosenImage
-//        dismiss(animated: true, completion: nil)
-//    }
-//    
-    
+  
     //MARK: - Firebase methods
     
     @IBAction func postAdPressed(_ sender: UIButton) {
         
         if categoriesLabel.text?.isEmpty == true || cityLabel.text?.isEmpty == true || adTitleLabel.text?.isEmpty == true || descriptionLabel.text?.isEmpty == true || priceLabel.text?.isEmpty == true {
             
-            createAlertBox(message: "Please fill empty fields")
+            message = "Please fill empty fields"
+            self.createAlertBox(message: message!)
             return
         }
         if checkUserInfo() {
-            postAd(for: uid!)
-            categoriesLabel.text = ""
-            adTitleLabel.text = ""
-            cityLabel.text = ""
-            priceLabel.text = ""
-            descriptionLabel.text = ""
+            self.setAdInfo(for: self.uid!, category: self.categoriesLabel.text!, adTitle: self.adTitleLabel.text!, adDescription: self.descriptionLabel.text!, city: self.cityLabel.text!, price:  self.priceLabel.text!, isFavourite: "false")
+            setTextFieldsEmpty()
+            self.performSegue(withIdentifier: "goToMyAds", sender: self.postAdButton)
         }
+    }
+    
+    func setTextFieldsEmpty() {
+        categoriesLabel.text = ""
+        adTitleLabel.text = ""
+        cityLabel.text = ""
+        priceLabel.text = ""
+        descriptionLabel.text = ""
     }
     
     func checkUserInfo() -> Bool {
         if Auth.auth().currentUser != nil {
-      //      print(uid!)
-      //      postAd(for: uid!)
             return true
         } else {
             view.endEditing(true)
-            print("Please login")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(identifier: "Login")
-            homeVC.modalPresentationStyle = .overFullScreen
-            self.present(homeVC, animated: true, completion: nil)
+            self.goToLoginView()
             return false
         }
     }
@@ -143,22 +87,8 @@ class PostAdViewController: UIViewController, UIImagePickerControllerDelegate, U
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if  textField == adTitleLabel
         {
-            checkUserInfo()
+            _ = checkUserInfo()
         }
-    }
-    
-    func postAd(for uid: String) {
-        
-        let adData = ["uid": uid,
-                      "category": self.categoriesLabel.text!,
-                      "adTitle": self.adTitleLabel.text!,
-                      "adDescription": self.descriptionLabel.text!,
-                      "city": self.cityLabel.text!,
-                      "price": self.priceLabel.text!,
-                      "isFavourite": "false",
-                      "timeStamp": ServerValue.timestamp()] as [String : Any]
-        
-        database.child("Ads").childByAutoId().setValue(adData)
     }
 }
 
@@ -196,11 +126,63 @@ extension PostAdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             cityLabel.resignFirstResponder()
         }
     }
-    func createAlertBox(message: String){
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+    
+    //MARK: - Image functions
+    
+//    @IBAction func onClickAddImage(_ sender: Any) {
+//
+//        print("Image tapped")
+//        actionSheet()
+//    }
+//
+//    func actionSheet(){
+//        let alert = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
+//
+//        alert.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (handler) in
+//            self.openCamera()
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Open Gallery", style: .default, handler: { (handler) in
+//            self.openGallery()
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
+//
+//        }))
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
+//
+//    func openCamera() {
+//
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            let image = UIImagePickerController()
+//            image.delegate = self
+//            image.allowsEditing = true
+//            image.sourceType = .camera
+//            self.present(image, animated: true, completion: nil)
+//        }
+//    }
+//
+//    func openGallery() {
+//
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            let image = UIImagePickerController()
+//            image.delegate = self
+//            image.sourceType = .photoLibrary
+//            image.allowsEditing = true
+//            self.present(image, animated: true, completion: nil)
+//        }
+//    }
+//
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [
+//                               String : Any]) {
+//
+//        let chosenImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as! UIImage
+//        productImage.image = chosenImage
+//        dismiss(animated: true, completion: nil)
+//    }
+//    import MobileCoreServices
+// UIImagePickerControllerDelegate,
+    
 }

@@ -25,8 +25,6 @@ class AdminViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
-        
     }
     
     func getUserInfo(completionHandler: @escaping ([String]) -> ()) {

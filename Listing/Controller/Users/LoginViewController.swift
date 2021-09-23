@@ -9,7 +9,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
+    
+    var message: String?
+    var status: String?
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -19,27 +22,31 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
+        status = ""
+        message = ""
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        checkUserInfo()
-    }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        checkUserInfo()
+//    }
 
     @IBAction func loginContinuePressed(_ sender: UIButton) {
 
         if email.text?.isEmpty == true {
             
-            createAlertBox(message: "Email field is empty.")
+            message = "Email field is empty."
+            self.createAlertBox(message: message!)
             return
         }
         
         if password.text?.isEmpty == true {
-           createAlertBox(message: "Password field is empty.")
+            message = "Password field is empty."
+            self.createAlertBox(message: message!)
             return
         }
         
         login()
+        status = "logging in"
     }
     
     func login() {
@@ -47,41 +54,35 @@ class LoginViewController: UIViewController {
             
             guard self != nil else {return}
             if error != nil {
-                print(error!)
-                self!.createAlertBox(message: error!.localizedDescription)
+                
+                self!.message = error!.localizedDescription
+                self!.createAlertBox(message: self!.message!)
                 
             } else {
                 if self!.email.text == "admin@admin.com" {
-                    
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "AdminStoryboard", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "AdminHomePage")
-                    newViewController.modalPresentationStyle = .fullScreen
-                    self!.present(newViewController, animated: true, completion: nil)
+                    self?.goToAdminHomeView()
                     
                 } else {
-                    
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "usersTabbar")
-                    newViewController.modalPresentationStyle = .fullScreen
-                    self!.present(newViewController, animated: true, completion: nil)
+                    self?.goToUserHomeView()
                 }
-                
             }
-            self!.checkUserInfo()
+//            self!.checkUserInfo()
         }
+        
+        status = "login() ran"
     }
     
-    func checkUserInfo() {
-        if Auth.auth().currentUser != nil {
-            print(Auth.auth().currentUser?.uid)
-        }
-    }
+//    func checkUserInfo() {
+//        if Auth.auth().currentUser != nil {
+//            print(Auth.auth().currentUser?.uid)
+//        }
+//    }
     
-    func createAlertBox(message: String){
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func createAlertBox(message: String){
+//        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }

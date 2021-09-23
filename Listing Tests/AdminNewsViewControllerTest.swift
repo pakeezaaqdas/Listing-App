@@ -57,6 +57,9 @@ class AdminNewsViewControllerTest: XCTestCase {
         XCTAssertNotNil(sut.self as? UITableViewDataSource.Type != nil)
         
     }
-
-
+    
+    func testAddTapped() {
+        sut.addTapped()
+        XCTAssertEqual(sut.status, "add tapped")
+    }
 }
